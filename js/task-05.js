@@ -6,5 +6,9 @@ const elements = {
 elements.nameInput.addEventListener("input", handlerName);
 
 function handlerName(evt) {
-  elements.nameOutput.textContent = evt.currentTarget.value;
+  if (elements.nameInput.value !== "") {
+    elements.nameOutput.textContent = evt.currentTarget.value;
+  } else {
+    return (elements.nameOutput.textContent = "Anonymous");
+  }
 }
